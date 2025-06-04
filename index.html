@@ -30,6 +30,40 @@
     });
   });
 
+  var lagu = [
+  ['Secukupnya', 'Hindia', '53M', '300k', 'cukupp.jpeg', 'Secukupe.mp3'],
+  ['Rumah Ke Rumah', 'Hindia', '99M', '1M', 'cukup.jpeg', 'Rumah song.mp3'],
+  ['Nina', '.Feast', '57M', '900K', 'nina.jpeg', 'Nina song.mp3'],
+  ['Walking Back Home', 'Vira Talisa', '6.4M', '260K', 'home.jpeg', 'Walking song.mp3'],
+  ['Begini Begitu', 'Maliq & D`Essentials', '1.3M', '140K', 'begini.jpeg', 'Begini song.mp3'],
+  ['Kami Belum Tentu', '.Feast', '12M', '600K', 'kamiblm.jpeg', 'Kami song.mp3'],
+  ['Mild High Club', 'Homage', '18M', '710K', 'mild.jpeg', 'Mild song.mp3'],
+  ['No surprises', 'Radiohead', '258M', '3.2M', 'no.jpeg', 'Radio song.mp3'],
+  ['No.1 Party Anthem', 'Arctic Monkeys', '85M', '1.2M', 'party.jpeg', 'Anthem song.mp3'],
+];
+
+
+  const audio = document.querySelectorAll("audio");
+
+audios.forEach((audio, index) => {
+  audio.addEventListener("play", () => {
+    audios.forEach((a, i) => {
+      if (i !== index) {
+        a.pause();
+        a.currentTime = 0;
+      }
+    });
+  });
+
+  audio.addEventListener("ended", () => {
+    if (index + 1 < audios.length) {
+      audios[index + 1].play();
+    }
+  });
+});
+
+
+
 
 </script>
 
