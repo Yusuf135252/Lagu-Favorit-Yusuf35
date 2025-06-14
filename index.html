@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lagu Favorit</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    <div class="header">
+        <h1>" Selamat Mendengarkan "</h1>
+    </div>
+    <div id="container">
+        
+    </div>
+    
+
+    <script src="script.js"></script>
+    <script>
+  const audios = document.querySelectorAll("audio");
+
+  audios.forEach(audio => {
+    audio.addEventListener("play", () => {
+      audios.forEach(a => {
+        if (a !== audio) {
+          a.pause();
+          a.currentTime = 0; // reset durasi ke awal
+        }
+      });
+    });
+  });
+
+  
+
+
+  const audio = document.querySelectorAll("audio");
+
+audios.forEach((audio, index) => {
+  audio.addEventListener("play", () => {
+    audios.forEach((a, i) => {
+      if (i !== index) {
+        a.pause();
+        a.currentTime = 0;
+      }
+    });
+  });
+
+  audio.addEventListener("ended", () => {
+    if (index + 1 < audios.length) {
+      audios[index + 1].play();
+    }
+  });
+});
+
+
+
+
+</script>
+
+</body>
+</html>
