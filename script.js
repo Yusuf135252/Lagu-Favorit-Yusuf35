@@ -23,7 +23,7 @@ for (let i = 0; i < lagu.length; i++) {
                 </small>
                 <img id="cover" src="img/${lagu[i][4]}" alt="" srcset="">
                 <audio controls id="audio-player">
-                  <source src="audio/${lagu[i][5]}" type="audio/mp3">
+                  <source src="Audio/${lagu[i][5]}" type="audio/mp3">
                 </audio>
                 <div class="bawah">
                      <div class="kanan">${lagu[i][2]}</div>
